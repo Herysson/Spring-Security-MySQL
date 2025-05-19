@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Bem-vindo</title>
+</head>
+<body>
+<h1>Bem-vindo ao sistema!</h1>
+<p>Você foi autenticado com sucesso.</p>
+
+<a href="/adminpanel" sec:authorize="hasAuthority('ADMIN')">Painel Administrador</a>
+
+<a href="/logout">Sair</a>
+</body>
+</html>
