@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title>Bem-vindo</title>
+    <title>Bem-vindo</title> <!-- Define o título da página -->
 </head>
 <body>
-<h1>Bem-vindo ao sistema!</h1>
-<p>Você foi autenticado com sucesso.</p>
+<h1>Bem-vindo ao sistema!</h1> <!-- Cabeçalho principal da página -->
 
+<!-- Exibe uma mensagem de boas-vindas com o nome do usuário autenticado -->
+<p>Olá, <span sec:authentication="name"></span>! Você foi autenticado com sucesso.</p>
+
+<!-- Link visível apenas para usuários com a autoridade 'ADMIN' -->
 <a href="/adminpanel" sec:authorize="hasAuthority('ADMIN')">Painel Administrador</a>
 
+<!-- Link para realizar logout -->
 <a href="/logout">Sair</a>
 </body>
 </html>
